@@ -13,12 +13,15 @@ $statement->bindParam(':des',$des);
 $statement->bindParam(':score',$score,PDO::PARAM_INT);
 $statement->bindParam(':type',$type);
 
-$title = randomString(30);
-$des = randomString(90);
-$score = rand()%990 + 10;
-$type = $types[rand()%4];
+for($i=0;$i<10000;$i++)
+{
+    $title = randomString(30);
+    $des = randomString(90);
+    $score = rand()%990 + 10;
+    $type = $types[rand()%4];
+    var_dump( $statement->execute());
+}
 
 
-var_dump( $statement->execute());
 
 
